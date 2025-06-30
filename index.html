@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Cipta Hospital Indonesia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <img src="https://img.freepik.com/free-vector/hospital-building-concept-illustration_114360-8067.jpg?w=826&t=st=1719720000~exp=1719720600~hmac=demo" alt="Hospital Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+            <button class="cta-btn" id="openLogin">Login</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Solusi Cloud Rumah Sakit Modern</h1>
+                <p>PT Cipta Hospital Indonesia bersama PT Indonesia Infrastruktur menghadirkan layanan digitalisasi rumah sakit berbasis cloud yang aman, cepat, dan terintegrasi.</p>
+                <a href="#layanan" class="cta-btn">Lihat Layanan</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Hospital" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section class="about" id="layanan">
+        <div class="container">
+            <h2>Layanan Kami</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-title">Digital Rekam Medis <span class="accordion-icon">&#9654;</span></div>
+                    <div class="accordion-content">
+                        <p>Penyimpanan dan pengelolaan data pasien secara digital, aman, dan mudah diakses kapan saja.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-title">Keamanan Data <span class="accordion-icon">&#9654;</span></div>
+                    <div class="accordion-content">
+                        <p>Data pasien dan rumah sakit terenkripsi dan terproteksi dengan standar keamanan tinggi.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-title">Support 24/7 <span class="accordion-icon">&#9654;</span></div>
+                    <div class="accordion-content">
+                        <p>Tim IT kami siap membantu dan memantau sistem Anda setiap saat.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-title">Integrasi Sistem <span class="accordion-icon">&#9654;</span></div>
+                    <div class="accordion-content">
+                        <p>Integrasi dengan sistem rumah sakit lain, laboratorium, dan apotek secara seamless.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section class="about" id="tentang" style="background:linear-gradient(120deg,#e0e7ff 60%,#f8fafc 100%);margin-top:0;">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center;">
+                <img src="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=826&t=st=1719720000~exp=1719720600~hmac=demo" alt="Tentang Kami" style="width:260px;border-radius:18px;box-shadow:0 4px 16px rgba(78,84,200,0.08);">
+                <div>
+                    <p style="font-size:1.1rem;color:#555;">
+                        PT Cipta Hospital Indonesia adalah perusahaan penyedia solusi digitalisasi rumah sakit berbasis cloud, bekerja sama dengan PT Indonesia Infrastruktur. Kami berkomitmen menghadirkan layanan terbaik untuk transformasi digital rumah sakit di Indonesia.
+                    </p>
+                    <ul style="color:#4e54c8;font-weight:600;line-height:2;">
+                        <li>Berpengalaman di bidang IT kesehatan</li>
+                        <li>Teknologi cloud mutakhir</li>
+                        <li>Tim profesional dan responsif</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="about" id="kontak">
+        <div class="container">
+            <h2>Kontak Kami</h2>
+            <form class="contact-form" autocomplete="off">
+                <input type="text" placeholder="Nama" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Pesan" rows="4" required></textarea>
+                <button type="submit" class="cta-btn">Kirim Pesan</button>
+            </form>
+            <div style="text-align:center;margin-top:18px;">
+                <p>Email: <a href="mailto:info@ciptahospital.co.id" style="color:#4e54c8;font-weight:600;">info@ciptahospital.co.id</a></p>
+                <p>Telepon: <a href="tel:+622112345678" style="color:#4e54c8;font-weight:600;">(021) 123-45678</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Login -->
+    <div class="modal" id="loginModal">
+      <div class="modal-content">
+        <button class="close-modal" id="closeLogin">&times;</button>
+        <h2>Login</h2>
+        <div class="login-tabs">
+          <button id="tabAdmin" class="active">Admin</button>
+          <button id="tabPasien">Pasien</button>
+        </div>
+        <form class="login-form" id="formAdmin">
+          <input type="text" placeholder="Username Admin" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit" class="cta-btn">Login Admin</button>
+        </form>
+        <form class="login-form" id="formPasien" style="display:none;">
+          <input type="text" placeholder="NIK Pasien" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit" class="cta-btn">Login Pasien</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 PT Cipta Hospital Indonesia. Developed by <b>Muhammad Dzulfikar Apandi Putra</b>. All rights reserved.</p>
+            <div class="socials">
+                <a href="https://facebook.com/mdzulfikarapandi" target="_blank" title="Facebook Muhammad Dzulfikar Apandi Putra">
+                    <img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook">
+                    <span>Muhammad Dzulfikar Apandi Putra</span>
+                </a>
+                <a href="https://instagram.com/mdzulfikarapandi" target="_blank" title="Instagram Muhammad Dzulfikar Apandi Putra">
+                    <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram">
+                    <span>Muhammad Dzulfikar Apandi Putra</span>
+                </a>
+                <a href="https://linkedin.com/in/mdzulfikarapandi" target="_blank" title="LinkedIn Muhammad Dzulfikar Apandi Putra">
+                    <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn">
+                    <span>Muhammad Dzulfikar Apandi Putra</span>
+                </a>
+                <a href="https://twitter.com/mdzulfikarapandi" target="_blank" title="Twitter Muhammad Dzulfikar Apandi Putra">
+                    <img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter">
+                    <span>Muhammad Dzulfikar Apandi Putra</span>
+                </a>
+                <a href="https://youtube.com/@mdzulfikarapandi" target="_blank" title="YouTube Muhammad Dzulfikar Apandi Putra">
+                    <img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" alt="YouTube">
+                    <span>Muhammad Dzulfikar Apandi Putra</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-title').forEach(item => {
+            item.addEventListener('click', event => {
+                const activeItem = document.querySelector('.accordion-item.active');
+                if (activeItem && activeItem !== item.parentElement) {
+                    activeItem.classList.remove('active');
+                    activeItem.querySelector('.accordion-content').style.maxHeight = null;
+                    activeItem.querySelector('.accordion-icon').innerHTML = '&#9654;';
+                }
+                const content = item.nextElementSibling;
+                const isActive = item.parentElement.classList.toggle('active');
+                item.querySelector('.accordion-icon').innerHTML = isActive ? '&#9660;' : '&#9654;';
+                content.style.maxHeight = isActive ? content.scrollHeight + 'px' : null;
+            });
+        });
+
+        // Modal Login functionality
+        const openLoginBtn = document.getElementById('openLogin');
+        const closeLoginBtn = document.getElementById('closeLogin');
+        const loginModal = document.getElementById('loginModal');
+
+        openLoginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+        });
+
+        closeLoginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+
+        // Tab switching in login modal
+        const tabAdmin = document.getElementById('tabAdmin');
+        const tabPasien = document.getElementById('tabPasien');
+        const formAdmin = document.getElementById('formAdmin');
+        const formPasien = document.getElementById('formPasien');
+
+        tabAdmin.addEventListener('click', () => {
+            tabAdmin.classList.add('active');
+            tabPasien.classList.remove('active');
+            formAdmin.style.display = 'block';
+            formPasien.style.display = 'none';
+        });
+
+        tabPasien.addEventListener('click', () => {
+            tabPasien.classList.add('active');
+            tabAdmin.classList.remove('active');
+            formPasien.style.display = 'block';
+            formAdmin.style.display = 'none';
+        });
+
+        // Login logic
+        formAdmin.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = formAdmin.querySelector('input[type="text"]').value.trim();
+            const pass = formAdmin.querySelector('input[type="password"]').value.trim();
+            if(user === "admin" && pass === "admin123") {
+                showDashboard('admin');
+            } else {
+                alert("Username atau password admin salah!");
+            }
+        });
+
+        formPasien.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = formPasien.querySelector('input[type="text"]').value.trim();
+            const pass = formPasien.querySelector('input[type="password"]').value.trim();
+            if(user === "1234567890" && pass === "pasien123") {
+                showDashboard('pasien');
+            } else {
+                alert("NIK atau password pasien salah!");
+            }
+        });
+
+        // DASHBOARD INTERAKTIF
+        function showDashboard(role) {
+            // Daftar fitur admin & pasien
+            const fiturAdmin = [
+                { id: "manajemenPasien", icon: "health-checkup.png", label: "Manajemen Pasien", desc: "Kelola data, riwayat, dan kunjungan pasien." },
+                { id: "manajemenDokter", icon: "doctor-male.png", label: "Manajemen Dokter", desc: "Kelola data dokter, jadwal, dan spesialisasi." },
+                { id: "manajemenJanji", icon: "calendar.png", label: "Manajemen Janji Temu", desc: "Kelola jadwal janji temu pasien & dokter." },
+                { id: "rekamMedis", icon: "medical-history.png", label: "Manajemen Rekam Medis", desc: "Lihat & update catatan medis pasien." },
+                { id: "rawatInap", icon: "hospital-room.png", label: "Manajemen Rawat Inap", desc: "Atur kamar, pasien masuk/keluar, status tagihan." },
+                { id: "pembayaran", icon: "money-bag.png", label: "Manajemen Pembayaran", desc: "Kelola tagihan, pembayaran, dan invoice." },
+                { id: "laporan", icon: "combo-chart--v1.png", label: "Laporan & Statistik", desc: "Lihat statistik pasien & keuangan." },
+                { id: "konten", icon: "news.png", label: "Manajemen Konten Website", desc: "Update pengumuman, artikel, dan info RS." },
+                { id: "notifikasi", icon: "appointment-reminders.png", label: "Notifikasi Sistem", desc: "Lihat pemberitahuan & alert sistem." },
+                { id: "pengguna", icon: "user-group-man-man.png", label: "Kelola Pengguna & Hak Akses", desc: "Kelola akun admin/operator & hak akses." }
+            ];
+            const fiturPasien = [
+                { id: "profil", icon: "user-male-circle.png", label: "Profil Pasien", desc: "Lihat & ubah data diri, ganti password." },
+                { id: "janji", icon: "calendar.png", label: "Janji Temu Online", desc: "Daftar & cek status janji temu dokter." },
+                { id: "riwayatMedis", icon: "medical-history.png", label: "Riwayat Medis", desc: "Lihat hasil pemeriksaan & download dokumen." },
+                { id: "pembayaran", icon: "money-bag.png", label: "Pembayaran & Tagihan", desc: "Lihat tagihan & upload bukti pembayaran." },
+                { id: "chat", icon: "chat-message.png", label: "Chat/Konsultasi Online", desc: "Konsultasi singkat dengan dokter/admin." },
+                { id: "fasilitas", icon: "hospital-room.png", label: "Fasilitas & Layanan", desc: "Info layanan RS & booking kamar inap." },
+                { id: "notifikasi", icon: "appointment-reminders.png", label: "Notifikasi", desc: "Pengingat jadwal, hasil lab, tagihan, dll." },
+                { id: "cetak", icon: "print.png", label: "Cetak Dokumen", desc: "Cetak bukti daftar, hasil lab, resep, dsb." }
+            ];
+
+            // Helper untuk icon
+            const iconUrl = (icon) => `https://img.icons8.com/ios-filled/100/4e54c8/${icon}`;
+
+            document.body.innerHTML = `
+            <header class="header dashboard-header">
+                <div class="container header-content">
+                    <img src="https://img.freepik.com/free-vector/hospital-building-concept-illustration_114360-8067.jpg?w=826&t=st=1719720000~exp=1719720600~hmac=demo" alt="Hospital Logo" class="logo">
+                    <nav>
+                        <ul>
+                            <li><a href="#" class="active">Dashboard</a></li>
+                            <li><a href="#" id="logoutBtn">Logout</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <main class="dashboard-main">
+                <div class="container">
+                    <div class="dashboard-welcome">
+                        <h1>Selamat Datang, ${role === 'admin' ? 'Admin' : 'Pasien'}</h1>
+                        <p>
+                            ${role === 'admin'
+                                ? 'Anda login sebagai <b>Admin</b>. Silakan pilih fitur manajemen rumah sakit di bawah ini.'
+                                : 'Anda login sebagai <b>Pasien</b>. Silakan akses layanan rumah sakit Anda di bawah ini.'}
+                        </p>
+                    </div>
+                    <div class="dashboard-menu">
+                        ${(role === 'admin' ? fiturAdmin : fiturPasien).map(f => `
+                            <div class="dashboard-card" data-target="${f.id}" tabindex="0">
+                                <img src="${iconUrl(f.icon)}"/>
+                                <h3>${f.label}</h3>
+                                <p>${f.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div id="dashboard-detail" style="margin-top:32px;"></div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="container footer-content">
+                    <p>&copy; 2025 PT Cipta Hospital Indonesia. Developed by <b>Nama Anda</b>. All rights reserved.</p>
+                    <div class="socials">
+                        <a href="https://facebook.com/mdzulfikarapandi" target="_blank" title="Facebook Muhammad Dzulfikar Apandi Putra">
+                            <img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook">
+                            <span style="display:none;">Muhammad Dzulfikar Apandi Putra</span>
+                        </a>
+                        <a href="https://instagram.com/mdzulfikarapandi" target="_blank" title="Instagram Muhammad Dzulfikar Apandi Putra">
+                            <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram">
+                            <span style="display:none;">Muhammad Dzulfikar Apandi Putra</span>
+                        </a>
+                        <a href="https://linkedin.com/in/mdzulfikarapandi" target="_blank" title="LinkedIn Muhammad Dzulfikar Apandi Putra">
+                            <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn">
+                            <span style="display:none;">Muhammad Dzulfikar Apandi Putra</span>
+                        </a>
+                        <a href="https://twitter.com/mdzulfikarapandi" target="_blank" title="Twitter Muhammad Dzulfikar Apandi Putra">
+                            <img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter">
+                            <span style="display:none;">Muhammad Dzulfikar Apandi Putra</span>
+                        </a>
+                        <a href="https://youtube.com/@mdzulfikarapandi" target="_blank" title="YouTube Muhammad Dzulfikar Apandi Putra">
+                            <img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" alt="YouTube">
+                            <span style="display:none;">Muhammad Dzulfikar Apandi Putra</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+            `;
+
+            // Logout
+            document.getElementById('logoutBtn').onclick = () => window.location.reload();
+
+            // Konten detail fitur + list fitur di samping
+            const detail = document.getElementById('dashboard-detail');
+            const fiturList = (list, activeId) => `
+                <div style="display:flex;gap:32px;flex-wrap:wrap;">
+                    <div class="fitur-list">
+                        <h4>Daftar Fitur</h4>
+                        <ul>
+                            ${list.map(f => `
+                                <li>
+                                    <button 
+                                        class="${f.id===activeId?'active':''}"
+                                        onclick="window.selectFitur && window.selectFitur('${f.id}')"
+                                    >
+                                        ${f.label}
+                                    </button>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                    <div id="fitur-content" style="flex:1;min-width:220px;"></div>
+                </div>
+            `;
+
+            // Form contoh untuk setiap fitur
+            function getForm(id, role) {
+                // Contoh form sederhana, bisa dikembangkan sesuai kebutuhan
+                if (role === 'admin') {
+                    if (id === "manajemenPasien") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Tambah/Edit Data Pasien</h4>
+                                <input type="text" placeholder="Nama Pasien" required>
+                                <input type="text" placeholder="NIK" required>
+                                <input type="number" placeholder="Umur" required>
+                                <select required>
+                                    <option value="">Status</option>
+                                    <option>Aktif</option>
+                                    <option>Nonaktif</option>
+                                </select>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Simpan</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "manajemenDokter") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Tambah/Edit Data Dokter</h4>
+                                <input type="text" placeholder="Nama Dokter" required>
+                                <input type="text" placeholder="Spesialisasi" required>
+                                <input type="text" placeholder="Jadwal Praktik" required>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Simpan</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "manajemenJanji") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Tambah Janji Temu</h4>
+                                <input type="text" placeholder="Nama Pasien" required>
+                                <input type="text" placeholder="Nama Dokter" required>
+                                <input type="date" required>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Simpan</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "rekamMedis") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Update Rekam Medis</h4>
+                                <input type="text" placeholder="Nama Pasien" required>
+                                <textarea placeholder="Catatan Medis" required></textarea>
+                                <input type="file" accept=".pdf,.jpg,.png">
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Upload</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "rawatInap") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Atur Rawat Inap</h4>
+                                <input type="text" placeholder="Nama Pasien" required>
+                                <input type="text" placeholder="Nomor Kamar" required>
+                                <select required>
+                                    <option value="">Status</option>
+                                    <option>Masuk</option>
+                                    <option>Keluar</option>
+                                </select>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Simpan</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "pembayaran") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Input Pembayaran</h4>
+                                <input type="text" placeholder="Nama Pasien" required>
+                                <input type="number" placeholder="Nominal" required>
+                                <select required>
+                                    <option value="">Metode</option>
+                                    <option>Cash</option>
+                                    <option>Transfer</option>
+                                    <option>BPJS</option>
+                                </select>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Simpan</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "laporan") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Filter Laporan</h4>
+                                <input type="month" required>
+                                <select required>
+                                    <option value="">Jenis Laporan</option>
+                                    <option>Pasien</option>
+                                    <option>Keuangan</option>
+                                </option>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Tampilkan</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "konten") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Tambah Konten Website</h4>
+                                <input type="text" placeholder="Judul" required>
+                                <textarea placeholder="Isi Konten" required></textarea>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Publikasikan</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "notifikasi") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Kirim Notifikasi</h4>
+                                <input type="text" placeholder="Judul" required>
+                                <textarea placeholder="Isi Notifikasi" required></textarea>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Kirim</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "pengguna") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Tambah Pengguna</h4>
+                                <input type="text" placeholder="Nama Pengguna" required>
+                                <input type="text" placeholder="Username" required>
+                                <input type="password" placeholder="Password" required>
+                                <select required>
+                                    <option value="">Hak Akses</option>
+                                    <option>Admin</option>
+                                    <option>Operator</option>
+                                    <option>Keuangan</option>
+                                </select>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Simpan</button>
+                            </form>
+                        `;
+                    }
+                } else {
+                    // PASIEN
+                    if (id === "profil") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Edit Profil</h4>
+                                <input type="text" placeholder="Nama" required>
+                                <input type="text" placeholder="NIK" required>
+                                <input type="email" placeholder="Email" required>
+                                <input type="text" placeholder="No. HP" required>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Simpan</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "janji") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Daftar Janji Temu</h4>
+                                <input type="text" placeholder="Nama Dokter" required>
+                                <input type="date" required>
+                                <input type="time" required>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Daftar</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "riwayatMedis") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Cari Riwayat Medis</h4>
+                                <input type="date" required>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Cari</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "pembayaran") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Upload Bukti Pembayaran</h4>
+                                <input type="number" placeholder="Nominal" required>
+                                <input type="file" accept=".jpg,.png,.pdf" required>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Upload</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "chat") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Kirim Pesan/Konsultasi</h4>
+                                <textarea placeholder="Tulis pesan Anda..." required></textarea>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Kirim</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "fasilitas") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Booking Kamar Inap</h4>
+                                <input type="text" placeholder="Nama Pasien" required>
+                                <input type="text" placeholder="Nomor Kamar" required>
+                                <input type="date" required>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Booking</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "notifikasi") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Cek Notifikasi</h4>
+                                <input type="text" placeholder="Cari Notifikasi" required>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Cari</button>
+                            </form>
+                        `;
+                    }
+                    if (id === "cetak") {
+                        return `
+                            <form class="dashboard-form">
+                                <h4 style="margin-bottom:10px;">Cetak Dokumen</h4>
+                                <select required>
+                                    <option value="">Pilih Dokumen</option>
+                                    <option>Bukti Pendaftaran</option>
+                                    <option>Hasil Lab</option>
+                                    <option>Resep</option>
+                                    <option>Surat Rujukan</option>
+                                </select>
+                                <button type="submit" class="cta-btn" style="margin-top:10px;">Cetak</button>
+                            </form>
+                        `;
+                    }
+                }
+                return "";
+            }
+
+            // Render fitur detail
+            window.selectFitur = function(id) {
+                let content = '';
+                if (role === 'admin') {
+                    if (id === "manajemenPasien") {
+                        content = `
+                            <h3>Manajemen Pasien</h3>
+                            <ul>
+                                <li>Lihat data pasien lengkap, tambah/edit/hapus pasien.</li>
+                                <li>Riwayat kunjungan dan diagnosa pasien.</li>
+                            </ul>
+                            <table class="dashboard-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Pasien</th>
+                                        <th>NIK</th>
+                                        <th>Umur</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Budi Santoso</td>
+                                        <td>1234567890</td>
+                                        <td>35</td>
+                                        <td>Aktif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Siti Aminah</td>
+                                        <td>9876543210</td>
+                                        <td>29</td>
+                                        <td>Aktif</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "manajemenDokter") {
+                        content = `
+                            <h3>Manajemen Dokter</h3>
+                            <ul>
+                                <li>Tambah/Edit/Hapus data dokter</li>
+                                <li>Jadwal praktik & spesialisasi</li>
+                            </ul>
+                            <table class="dashboard-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Dokter</th>
+                                        <th>Spesialis</th>
+                                        <th>Jadwal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>dr. Andi</td>
+                                        <td>Penyakit Dalam</td>
+                                        <td>Senin, Rabu, Jumat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>dr. Sari</td>
+                                        <td>Anak</td>
+                                        <td>Selasa, Kamis</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "manajemenJanji") {
+                        content = `
+                            <h3>Manajemen Janji Temu</h3>
+                            <ul>
+                                <li>Lihat & kelola semua jadwal pasien dengan dokter</li>
+                                <li>Setujui/tolak janji temu, riwayat janji temu</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "rekamMedis") {
+                        content = `
+                            <h3>Manajemen Rekam Medis</h3>
+                            <ul>
+                                <li>Lihat dan update catatan medis</li>
+                                <li>Upload hasil laboratorium/radiologi</li>
+                                <li>Akses resep atau riwayat pengobatan</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "rawatInap") {
+                        content = `
+                            <h3>Manajemen Rawat Inap</h3>
+                            <ul>
+                                <li>Cek ketersediaan kamar</li>
+                                <li>Atur pasien masuk/keluar rawat inap</li>
+                                <li>Status pembayaran/penagihan</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "pembayaran") {
+                        content = `
+                            <h3>Manajemen Pembayaran</h3>
+                            <ul>
+                                <li>Daftar tagihan dan riwayat pembayaran</li>
+                                <li>Cetak invoice, status asuransi/BPJS</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "laporan") {
+                        content = `
+                            <h3>Laporan & Statistik</h3>
+                            <ul>
+                                <li>Jumlah pasien per hari/bulan/tahun</li>
+                                <li>Laporan keuangan rumah sakit</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "konten") {
+                        content = `
+                            <h3>Manajemen Konten Website</h3>
+                            <ul>
+                                <li>Update pengumuman, artikel/blog kesehatan</li>
+                                <li>Informasi lowongan kerja & seminar</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "notifikasi") {
+                        content = `
+                            <h3>Notifikasi Sistem</h3>
+                            <ul>
+                                <li>Pemberitahuan janji temu, pembayaran, perubahan data</li>
+                                <li>Alert kamar penuh, obat habis, dll.</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "pengguna") {
+                        content = `
+                            <h3>Kelola Pengguna & Hak Akses</h3>
+                            <ul>
+                                <li>Buat akun admin/operator baru</li>
+                                <li>Set hak akses (admin, operator, keuangan, dll.)</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    }
+                    detail.innerHTML = fiturList(fiturAdmin, id);
+                } else {
+                    // PASIEN
+                    if (id === "profil") {
+                        content = `
+                            <h3>Profil Pasien</h3>
+                            <ul>
+                                <li>Nama: Rafli</li>
+                                <li>NIK: 1234567890</li>
+                                <li>Email: pasien@Reynanda.com</li>
+                                <li>No. HP: 0812-3456-7890</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "janji") {
+                        content = `
+                            <h3>Janji Temu Online</h3>
+                            <ul>
+                                <li>Daftar janji temu dengan dokter</li>
+                                <li>Lihat status (disetujui/dijadwalkan/dibatalkan)</li>
+                                <li>Notifikasi pengingat jadwal</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "riwayatMedis") {
+                        content = `
+                            <h3>Riwayat Medis</h3>
+                            <ul>
+                                <li>Lihat hasil pemeriksaan sebelumnya</li>
+                                <li>Download PDF hasil lab, resep, atau rujukan</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "pembayaran") {
+                        content = `
+                            <h3>Pembayaran & Tagihan</h3>
+                            <ul>
+                                <li>Lihat tagihan terbaru</li>
+                                <li>Upload bukti pembayaran</li>
+                                <li>Cek status pembayaran</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "chat") {
+                        content = `
+                            <h3>Chat/Konsultasi Online</h3>
+                            <ul>
+                                <li>Konsultasi singkat dengan dokter (jika tersedia)</li>
+                                <li>Pesan singkat untuk administrasi</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "fasilitas") {
+                        content = `
+                            <h3>Fasilitas & Layanan</h3>
+                            <ul>
+                                <li>Info layanan rumah sakit</li>
+                                <li>Lihat dokter dan jadwal praktiknya</li>
+                                <li>Booking kamar inap (opsional)</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "notifikasi") {
+                        content = `
+                            <h3>Notifikasi</h3>
+                            <ul>
+                                <li>Pengingat jadwal, hasil lab tersedia, tagihan jatuh tempo</li>
+                                <li>Informasi dari admin</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    } else if (id === "cetak") {
+                        content = `
+                            <h3>Cetak Dokumen</h3>
+                            <ul>
+                                <li>Cetak bukti pendaftaran</li>
+                                <li>Cetak hasil lab, resep, surat rujukan</li>
+                            </ul>
+                            ${getForm(id, role)}
+                        `;
+                    }
+                    detail.innerHTML = fiturList(fiturPasien, id);
+                }
+                // Isi konten fitur
+                document.getElementById('fitur-content').innerHTML = content;
+            };
+
+            // Tampilkan fitur pertama secara default
+            if (role === 'admin') {
+                window.selectFitur(fiturAdmin[0].id);
+            } else {
+                window.selectFitur(fiturPasien[0].id);
+            }
+
+            // Interaktif dashboard menu utama
+            document.querySelectorAll('.dashboard-card').forEach(card => {
+                card.onclick = card.onkeydown = function(e) {
+                    if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
+                    window.selectFitur(this.getAttribute('data-target'));
+                    document.getElementById('dashboard-detail').scrollIntoView({behavior: "smooth"});
+                };
+            });
+        }
+    </script>
+</body>
+</html>
